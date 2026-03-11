@@ -1,0 +1,111 @@
+.contact {
+  padding: 100px 6%;
+  background: var(--bg);
+}
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  max-width: 1000px;
+  margin: 0 auto;
+  align-items: center;
+}
+
+/* Info */
+.contact-info .section-tag,
+.contact-info .section-title {
+  text-align: left;
+  margin-left: 0;
+}
+.contact-info .section-title {
+  margin-bottom: 16px;
+}
+.contact-info > p {
+  font-size: 0.95rem;
+  color: var(--dark);
+  line-height: 1.7;
+  margin-bottom: 36px;
+  font-weight: 400;
+}
+.info-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.info-card {
+  background: var(--white);
+  border-radius: 16px;
+  padding: 20px 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.info-card-icon {
+  width: 48px;
+  height: 48px;
+  background: var(--orange);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+.info-card h4 {
+  font-size: 0.8rem;
+  color: var(--gray-mid);
+  margin-bottom: 2px;
+  font-weight: 500;
+}
+.info-card p {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--dark);
+  margin: 0;
+}
+
+/* Form */
+.contact-form {
+  background: var(--white);
+  border-radius: 24px;
+  padding: 40px;
+}
+.form-group {
+  margin-bottom: 20px;
+}
+.form-group label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--dark);
+  display: block;
+  margin-bottom: 8px;
+}
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 14px 18px;
+  border: 2px solid #e8e8e8;
+  border-radius: 12px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.9rem;
+  color: var(--dark);
+  background: var(--bg);
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  resize: vertical;
+}
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: var(--orange);
+  box-shadow: 0 0 0 4px rgba(232, 87, 14, 0.1);
+}
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+@media (max-width: 768px) {
+  .contact-grid { grid-template-columns: 1fr; }
+  .form-row { grid-template-columns: 1fr; }
+}
