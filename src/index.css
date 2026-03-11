@@ -51,20 +51,34 @@ p {
 }
 
 /* Reveal animations */
-.reveal, .reveal-left, .reveal-right {
+.reveal, .reveal-left, .reveal-right, .reveal-top, .reveal-bottom {
   opacity: 0;
+  visibility: hidden; /* Prevent interaction until visible */
 }
 
-.reveal {
+.reveal.visible {
+  visibility: visible;
   animation: fadeInUp 0.8s ease forwards;
 }
 
-.reveal-left {
+.reveal-left.visible {
+  visibility: visible;
   animation: slideInLeft 0.8s ease forwards;
 }
 
-.reveal-right {
+.reveal-right.visible {
+  visibility: visible;
   animation: slideInRight 0.8s ease forwards;
+}
+
+.reveal-top.visible {
+  visibility: visible;
+  animation: fadeInDown 0.8s ease forwards;
+}
+
+.reveal-bottom.visible {
+  visibility: visible;
+  animation: fadeUpward 0.8s ease forwards;
 }
 
 .visible {
@@ -101,5 +115,27 @@ p {
   to {
     opacity: 1;
     transform: translateX(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeUpward {
+  from {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

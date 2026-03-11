@@ -35,11 +35,12 @@ const socialLinks = [
 
 export default function Hero() {
   const leftRef = useScrollReveal()
+  const rightRef = useScrollReveal()
 
   return (
     <section id="home" className="hero">
       {/* LEFT */}
-      <div className="hero-left reveal" ref={leftRef}>
+      <div className="hero-left reveal-left" ref={leftRef}>
         <div className="section-tag">AI Enthusiast | Web &amp; Mobile Developer</div>
         <h1>
           Hello! I'm{' '}
@@ -68,7 +69,7 @@ export default function Hero() {
       </div>
 
       {/* RIGHT - Photo + Geometric Shapes */}
-      <div className="hero-right">
+      <div className="hero-right reveal-right" ref={rightRef}>
         {/* Cross shape */}
         <div className="geo-cross">
           <div className="bar-h" />

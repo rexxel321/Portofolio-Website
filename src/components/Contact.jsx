@@ -32,7 +32,7 @@ export default function Contact() {
     <section id="contact" className="contact">
       <div className="contact-grid">
         {/* Info */}
-        <div className="contact-info reveal" ref={infoRef}>
+        <div className="contact-info reveal-left" ref={infoRef}>
           <div className="section-tag">Get In Touch</div>
           <h2 className="section-title">Let's Work Together</h2>
           <p>
@@ -42,7 +42,7 @@ export default function Contact() {
         </div>
 
         {/* Form */}
-        <form className="contact-form reveal" ref={formRef} onSubmit={handleSubmit}>
+        <form className="contact-form reveal-right" ref={formRef} onSubmit={handleSubmit}>
           <div className="form-row">
             <div className="form-group">
               <label>First Name</label>

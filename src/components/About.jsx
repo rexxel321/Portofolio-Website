@@ -27,7 +27,7 @@ const experiences = [
     desc: 'Assisted in machine learning model development and data analysis projects. Gained deep expertise in Python, TensorFlow, and NLP pipelines.',
   },
 
-   {
+  {
     num: 3,
     title: 'Head of WEB DEVELOPMENT PUSB',
     period: '2026 - Present',
@@ -41,7 +41,7 @@ export default function About() {
   const timelineRef = useScrollReveal()
 
   return (
-    <section id="about" className="about">
+    <section id="about" className="about reveal-top" ref={titleRef}>
       <div className="section-tag">About Me</div>
       <h2 className="section-title">Who Am I?</h2>
       <p className="section-desc">
@@ -51,7 +51,7 @@ export default function About() {
         intelligence and user experience.
       </p>
 
-      <div className="stats-grid reveal" ref={statsRef}>
+      <div className="stats-grid reveal-top" ref={statsRef}>
         {stats.map((s, i) => (
           <div className={`stat-card ${i === 2 ? 'stat-card--accent' : ''}`} key={s.label}>
             <div className="stat-icon">{s.icon}</div>
@@ -61,8 +61,8 @@ export default function About() {
         ))}
       </div>
 
-      <h3 className="work-title reveal" ref={titleRef}> Experience</h3>
-      <div className="timeline reveal" ref={timelineRef}>
+      <h3 className="work-title reveal-top" ref={titleRef}> Experience</h3>
+      <div className="timeline reveal-top" ref={timelineRef}>
         {experiences.map((exp) => (
           <div className="timeline-item" key={exp.num}>
             <div className="timeline-num">{exp.num}</div>

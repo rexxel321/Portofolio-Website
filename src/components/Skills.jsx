@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react'
+import useScrollReveal from '../hooks/useScrollReveal'
 import './Skills.css'
 
 const skills = [
@@ -34,9 +35,11 @@ export default function Skills() {
     return () => observer.disconnect()
   }, [])
 
+  const headerRef = useScrollReveal()
+
   return (
     <section id="skills" className="skills">
-      <div className="skills-header">
+      <div className="skills-header reveal-right" ref={headerRef}>
         <div className="section-tag skills-tag">My Expertise</div>
         <h2 className="section-title">Skills</h2>
         <p className="section-desc">Technologies and tools I work with professionally.</p>

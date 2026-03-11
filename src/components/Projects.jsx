@@ -64,31 +64,34 @@ const filters = ['all', 'ai', 'web', 'mobile']
 export default function Projects() {
   const [active, setActive] = useState('all')
   const gridRef = useScrollReveal()
+  const headerRef = useScrollReveal()
 
   const visible = projects.filter((p) => active === 'all' || p.cat === active)
 
   return (
     <section id="projects" className="projects">
-      <div className="section-tag">My Work</div>
-      <h2 className="section-title">Projects</h2>
-      <p className="section-desc">
-        A selection of projects I've built — from AI-powered tools to full-stack
-        applications.
-      </p>
+      <div className="projects-header reveal-bottom" ref={headerRef}>
+        <div className="section-tag">My Work</div>
+        <h2 className="section-title">Projects</h2>
+        <p className="section-desc">
+          A selection of projects I've built — from AI-powered tools to full-stack
+          applications.
+        </p>
 
-      <div className="filter-tabs">
-        {filters.map((f) => (
-          <button
-            key={f}
-            className={`filter-tab ${active === f ? 'active' : ''}`}
-            onClick={() => setActive(f)}
-          >
-            {f.charAt(0).toUpperCase() + f.slice(1)}
-          </button>
-        ))}
+        <div className="filter-tabs">
+          {filters.map((f) => (
+            <button
+              key={f}
+              className={`filter-tab ${active === f ? 'active' : ''}`}
+              onClick={() => setActive(f)}
+            >
+              {f.charAt(0).toUpperCase() + f.slice(1)}
+            </button>
+          ))}
+        </div>
       </div>
 
-      <div className="projects-grid reveal" ref={gridRef}>
+      <div className="projects-grid reveal-bottom" ref={gridRef}>
         {visible.map((p) => (
           <div className="project-card" key={p.title}>
             <div className="project-thumb" style={{ background: p.bg }}>

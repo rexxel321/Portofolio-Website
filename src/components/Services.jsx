@@ -24,11 +24,12 @@ const services = [
 
 export default function Services() {
   const gridRef = useScrollReveal()
+  const titleRef = useScrollReveal()
 
   return (
     <section id="services" className="services">
-      <div className="section-tag">What I Do</div>
-      <h2 className="section-title">Services</h2>
+      <div className="section-tag" ref={titleRef}>What I Do</div>
+      <h2 className="section-title reveal-left" ref={titleRef}>Services</h2>
       <p className="section-desc">
         I offer a comprehensive range of digital services designed to bring your
         vision to life with precision and creativity.
