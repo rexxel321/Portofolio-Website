@@ -10,6 +10,19 @@ export default function Contact() {
 
   const handleSubmit = (e) => {
     e.preventDefault()
+
+    // Construct the WhatsApp message
+    const phoneNumber = '6289694109330'
+    const textMessage = `Hello Dhiya,\n\nI am reaching out from your portfolio website.\n\n*Name:* ${form.firstName} ${form.lastName}\n*Email:* ${form.email}\n\n*Message:*\n${form.message}`
+
+    // Encode the text message for URL
+    const encodedMessage = encodeURIComponent(textMessage)
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`
+
+    // Open WhatsApp in a new tab
+    window.open(whatsappUrl, '_blank')
+
+    // Show success toast and clear form
     setToast(true)
     setForm({ firstName: '', lastName: '', email: '', message: '' })
     setTimeout(() => setToast(false), 3500)
