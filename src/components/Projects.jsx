@@ -3,7 +3,7 @@ import useScrollReveal from '../hooks/useScrollReveal'
 import aiChatbotImg from '../assets/ai chatbot.jpeg'
 import volunterImg from '../assets/volunter.png'
 import emotiCareImg from '../assets/EmotiCare.png'
-import ecommerceImg from '../assets/ecommerce.png'
+import ecommerceImg from '../assets/ecommerce(1).png'
 import './Projects.css'
 
 const projects = [
