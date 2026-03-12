@@ -14,8 +14,8 @@ export default function Footer() {
             Transforming ideas into intelligent digital solutions with cutting-edge technology. Let's build the future together.
           </p>
           <div className="social-links">
-            <a href="https://github.com/muhammaddhiyaulhaq" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><FaGithub /></a>
-            <a href="https://linkedin.com/in/muhammaddhiyaulhaq" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><FaLinkedin /></a>
+            <a href="https://github.com/rexxel321" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><FaGithub /></a>
+            <a href="https://www.linkedin.com/in/muhammaddhiyaulhaq-/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><FaLinkedin /></a>
             <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><FaTwitter /></a>
           </div>
         </div>

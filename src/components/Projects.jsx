@@ -3,6 +3,7 @@ import useScrollReveal from '../hooks/useScrollReveal'
 import aiChatbotImg from '../assets/ai chatbot.jpeg'
 import volunterImg from '../assets/volunter.png'
 import emotiCareImg from '../assets/EmotiCare.png'
+import ecommerceImg from '../assets/ecommerce.png'
 import './Projects.css'
 
 const projects = [
@@ -27,10 +28,11 @@ const projects = [
   {
     cat: 'mobile',
     emoji: '📱',
+    image: ecommerceImg,
     bg: '#f0feee',
     tag: 'Mobile',
-    title: 'Health Tracker App',
-    desc: 'Flutter-based mobile app with AI-powered health insights and wearable integration.',
+    title: 'E-commerce App',
+    desc: 'Mobile application for e-commerce with a seamless shopping experience.',
   },
   {
     cat: 'ai',
