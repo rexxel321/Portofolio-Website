@@ -3,33 +3,6 @@
   background: var(--white);
   text-align: center;
 }
-.filter-tabs {
-  display: flex;
-  gap: 12px;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-bottom: 50px;
-}
-.filter-tab {
-  padding: 9px 24px;
-  border-radius: 50px;
-  border: 2px solid #e0e0e0;
-  font-family: 'Poppins', sans-serif;
-  font-size: 0.8rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  cursor: pointer;
-  transition: all 0.2s;
-  background: transparent;
-  color: var(--gray);
-}
-.filter-tab.active,
-.filter-tab:hover {
-  background: var(--orange);
-  border-color: var(--orange);
-  color: #fff;
-}
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);

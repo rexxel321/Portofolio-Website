@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import useScrollReveal from '../hooks/useScrollReveal'
 import aiChatbotImg from '../assets/ai chatbot.jpeg'
 import volunterImg from '../assets/volunter.png'
@@ -8,7 +7,6 @@ import './Projects.css'
 
 const projects = [
   {
-    cat: 'ai',
     emoji: '🧠',
     image: aiChatbotImg,
     bg: '#fef3ec',
@@ -17,7 +15,6 @@ const projects = [
     desc: 'Conversational AI powered by LLMs with custom fine-tuning for business use cases.',
   },
   {
-    cat: 'web',
     emoji: '🌐',
     image: volunterImg,
     bg: '#eef3fe',
@@ -26,7 +23,6 @@ const projects = [
     desc: 'Building a volunteer website for humanitarian activities.',
   },
   {
-    cat: 'mobile',
     emoji: '📱',
     image: ecommerceImg,
     bg: '#f0feee',
@@ -35,7 +31,6 @@ const projects = [
     desc: 'Mobile application for e-commerce with a seamless shopping experience.',
   },
   {
-    cat: 'ai',
     emoji: '🔮',
     image: emotiCareImg,
     bg: '#fdf4ff',
@@ -44,7 +39,6 @@ const projects = [
     desc: 'Deeplearning project using Yolov11 for mood detection.',
   },
   {
-    cat: 'web',
     emoji: '📊',
     bg: '#fff8ee',
     tag: 'Web',
@@ -52,7 +46,6 @@ const projects = [
     desc: 'No-code platform for developers to build beautiful portfolio websites in minutes.',
   },
   {
-    cat: 'mobile',
     emoji: '🎓',
     bg: '#eef9ff',
     tag: 'Mobile',
@@ -61,14 +54,9 @@ const projects = [
   },
 ]
 
-const filters = ['all', 'ai', 'web', 'mobile']
-
 export default function Projects() {
-  const [active, setActive] = useState('all')
   const gridRef = useScrollReveal()
   const headerRef = useScrollReveal()
-
-  const visible = projects.filter((p) => active === 'all' || p.cat === active)
 
   return (
     <section id="projects" className="projects">
@@ -79,22 +67,10 @@ export default function Projects() {
           A selection of projects I've built — from AI-powered tools to full-stack
           applications.
         </p>
-
-        <div className="filter-tabs">
-          {filters.map((f) => (
-            <button
-              key={f}
-              className={`filter-tab ${active === f ? 'active' : ''}`}
-              onClick={() => setActive(f)}
-            >
-              {f.charAt(0).toUpperCase() + f.slice(1)}
-            </button>
-          ))}
-        </div>
       </div>
 
       <div className="projects-grid reveal-bottom" ref={gridRef}>
-        {visible.map((p) => (
+        {projects.map((p) => (
           <div className="project-card" key={p.title}>
             <div className="project-thumb" style={{ background: p.bg }}>
               {p.image ? (
