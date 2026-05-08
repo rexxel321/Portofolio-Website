@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import './Header.css'
 
-const navLinks = ['Home', 'About', 'Services', 'Skills', 'Projects', 'Contact']
+const navLinks = ['Home', 'About', 'Skills', 'Projects', 'Certifications', 'Contact']
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false)
