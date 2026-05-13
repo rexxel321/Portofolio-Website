@@ -1,3 +1,4 @@
+import { useRef, useEffect, useCallback } from 'react'
 import useScrollReveal from '../hooks/useScrollReveal'
 import './Skills.css'
 
@@ -49,11 +50,48 @@ const skills = [
   },
 ]
 
-// Duplicate for seamless loop
-const tickerItems = [...skills, ...skills]
-
 export default function Skills() {
   const headerRef = useScrollReveal()
+  const tickerRef = useRef(null)
+  const animRef = useRef(null)
+  const offsetRef = useRef(0)
+  const isPausedRef = useRef(false)
+  const speed = 1.2 // pixels per frame
+
+  const animate = useCallback(() => {
+    if (!isPausedRef.current && tickerRef.current) {
+      offsetRef.current -= speed
+
+      // Get the width of one set (first half of children)
+      const children = tickerRef.current.children
+      const halfCount = Math.floor(children.length / 2)
+      let setWidth = 0
+      for (let i = 0; i < halfCount; i++) {
+        setWidth += children[i].offsetWidth + parseFloat(getComputedStyle(children[i]).marginRight || 0)
+      }
+
+      // Reset seamlessly when one full set has scrolled past
+      if (Math.abs(offsetRef.current) >= setWidth) {
+        offsetRef.current += setWidth
+      }
+
+      tickerRef.current.style.transform = `translate3d(${offsetRef.current}px, 0, 0)`
+    }
+    animRef.current = requestAnimationFrame(animate)
+  }, [])
+
+  useEffect(() => {
+    animRef.current = requestAnimationFrame(animate)
+    return () => {
+      if (animRef.current) cancelAnimationFrame(animRef.current)
+    }
+  }, [animate])
+
+  const handleMouseEnter = () => { isPausedRef.current = true }
+  const handleMouseLeave = () => { isPausedRef.current = false }
+
+  // Render 3 copies for extra safety
+  const tickerItems = [...skills, ...skills, ...skills]
 
   return (
     <section id="skills" className="skills">
@@ -63,8 +101,12 @@ export default function Skills() {
         <p className="section-desc">Technologies and tools I work with professionally.</p>
       </div>
 
-      <div className="skills-ticker-wrap">
-        <div className="skills-ticker">
+      <div
+        className="skills-ticker-wrap"
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+      >
+        <div className="skills-ticker" ref={tickerRef}>
           {tickerItems.map((skill, idx) => (
             <div className="skill-logo-card" key={idx}>
               <div

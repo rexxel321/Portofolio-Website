@@ -30,7 +30,7 @@ const experiences = [
     num: 3,
     title: 'Internship at ResponsAIbility',
     period: '2026 - Present',
-    desc: 'Assisted in machine learning model development and data analysis projects. Gained deep expertise in Python, TensorFlow, and NLP pipelines.',
+    desc: 'Assisted in developing a full-stack Content Management System (CMS) with Role-Based Access Control. Gained deep expertise in Next.js, Golang, and Appwrite backend integration.',
   },
   {
     num: 4,

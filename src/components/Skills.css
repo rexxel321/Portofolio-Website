@@ -60,21 +60,13 @@
   );
 }
 
-/* ── Scrolling track ── */
-@keyframes ticker-scroll {
-  0%   { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-
+/* ── Scrolling track (JS-driven) ── */
 .skills-ticker {
   display: flex;
   width: max-content;
-  animation: ticker-scroll 28s linear infinite;
-  gap: 20px;
-}
-
-.skills-ticker:hover {
-  animation-play-state: paused;
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 /* ── Individual logo card ── */
@@ -89,6 +81,7 @@
   border-radius: 20px;
   padding: 28px 32px;
   min-width: 130px;
+  margin-right: 20px;
   cursor: default;
   transition: background 0.3s, border-color 0.3s, transform 0.3s;
 }

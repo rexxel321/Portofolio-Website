@@ -126,7 +126,7 @@
   text-decoration: none;
   transition: all 0.25s;
   background: var(--orange-light);
-  color: var(--orange);
+  color: #000;
   width: fit-content;
 }
 .cert-link:hover {
